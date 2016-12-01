@@ -1,10 +1,11 @@
 .mdl-textfield__input{
-  background-color: #919191
+  background-color: #919191;
+  color: #51D9FF
 }
 
 .loginbox {
   color: #F19725;
-  border: 1px solid #F19725;
+  border: 1px solid #51D9FF;
   display: inline-block;
   padding: 16px;
 }

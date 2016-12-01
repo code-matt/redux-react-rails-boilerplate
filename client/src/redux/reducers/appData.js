@@ -1,4 +1,4 @@
-const app = (state, action) => {
+const appData = (state, action) => {
   if (!state) {
     state = {
       login: {
@@ -16,11 +16,19 @@ const app = (state, action) => {
     }
   }
   switch (action.type) {
+    case 'CHANGE_DATA':
+      return {
+        ...state,
+        [action.propName]: {
+          ...state[action.propName],
+          [action.fieldId]: action.value
+        }
+      }
     default:
       return state
   }
 }
 
 export {
-  app
+  appData
 }

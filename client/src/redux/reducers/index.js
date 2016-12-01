@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 import { token } from './auth'
-import { app } from './app'
+import { appData } from './appData'
 import { favorites } from './favorites'
 
 const MIGHSchedulerApp = combineReducers({
   token,
-  app,
+  appData,
   favorites
 })
 

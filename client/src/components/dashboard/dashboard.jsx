@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
 import './dashboard.css'
-import FavoriteCard from '../favorite/favorite-card'
+import FavoriteCard from '../favorites/favorite-card'
 import VisibleLoginForm from '../../redux/containers/login'
 import logo from './logo.svg'
 import SearchForm from '../search/search-form'
 
 class Dashboard extends Component {
-  constructor () {
-    super()
-    this.renderFavorites = this.renderFavorites.bind(this)
+
+  handleValueChange (value, fieldId, propName) {
+    this.props._appActions.changeData(value, fieldId, propName)
+  }
+
+  handleSearch () {
+    this.props._favActions.getFavorites(
+      this.props.appData.search.searchInput
+    )
   }
 
   renderFavorites (favorites, component) {
@@ -27,7 +33,7 @@ class Dashboard extends Component {
         <div className='mdl-tooltip' data-mdl-for='tt2'>
           Everything you see is inside a container named Dashboard.
           It knows about Redux and has props and actions
-          connected to it! You can it in /redux/containers/dashboard.js.
+          connected to it! You can find it in /redux/containers/dashboard.js.
         </div>
         <div id='tt2'>
           <div className='App-logo'>
@@ -37,7 +43,9 @@ class Dashboard extends Component {
         </div>
         <VisibleLoginForm />
         <br />
-        <SearchForm />
+        <SearchForm
+          valueChangeCB={this.handleValueChange.bind(this)}
+          searchCB={this.handleSearch.bind(this)} />
         {this.props.favorites.length > 0
           ? this.renderFavorites(this.props.favorites, this)
           : <div className='searchErr'><strong>No search results found, try again...</strong></div>
