@@ -40,6 +40,7 @@ class Dashboard extends Component {
             <img src={logo} className='App-logo' alt='logo' />
           </div>
           <h6>Welcome to Redux + React + Rails boilerplate</h6>
+          <div className='subtitle'><span className='highlight'>React</span> provided via create-react-app package <i className='fa fa-heart highlight fa-1x' aria-hidden='true' /></div>
         </div>
         <VisibleLoginForm />
         <br />

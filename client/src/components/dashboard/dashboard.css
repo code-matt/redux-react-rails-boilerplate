@@ -2,3 +2,13 @@
   padding-top: 25px;
   color: #AFAFAF
 }
+
+.subtitle {
+  font-style: italic;
+  font-size: 0.7em;
+  transform: translateY(-20px);
+}
+
+.highlight {
+  color: #51D9FF;
+}
