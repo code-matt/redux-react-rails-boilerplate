@@ -1,4 +1,5 @@
 ##### Prod:
+Change your production host to localhost also for now in /client/.env before you build.
 ```
 rails db:create
 rails db:migrate
