@@ -2,8 +2,8 @@ const appData = (state, action) => {
   if (!state) {
     state = {
       login: {
-        usernameInput: '',
-        passwordInput: '',
+        usernameInput: 'qq@qq.com',
+        passwordInput: '12345678',
         loading: false
       },
       search: {

@@ -18,9 +18,5 @@
 }
 
 .demo-list-control {
-max-width: 700px
-}
-
-.demo-list-radio {
-  display: inline;
+  max-width: 700px
 }

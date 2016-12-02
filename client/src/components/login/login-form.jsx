@@ -31,12 +31,12 @@ class LoginForm extends Component {
         <strong>Login to add favs.</strong>
         <form action='#'>
           <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
-            <input onChange={this.handleValueChange} className='mdl-textfield__input' type='text' id='usernameInput' />
+            <input onChange={this.handleValueChange} className='mdl-textfield__input' type='text' id='usernameInput' defaultValue='qq@qq.com' />
             <label className='mdl-textfield__label' htmlFor='usernameInput'>Email</label>
           </div>
           <br />
           <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
-            <input onChange={this.handleValueChange} className='mdl-textfield__input' type='text' id='passwordInput' />
+            <input onChange={this.handleValueChange} className='mdl-textfield__input' type='text' id='passwordInput' defaultValue='12345678' />
             <label className='mdl-textfield__label' htmlFor='passwordInput'>Password</label>
           </div>
         </form>
