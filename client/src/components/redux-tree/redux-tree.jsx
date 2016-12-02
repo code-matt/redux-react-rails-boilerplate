@@ -7,9 +7,18 @@ class ReduxTreeView extends Component {
     super()
     this.dataSource = []
     this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this)
+    this.componentWillMount = this.componentWillMount.bind(this)
+    this.parseStateObject = this.parseStateObject.bind(this)
   }
 
+  componentWillMount () {
+    this.parseStateObject(this.props)
+  }
   componentWillReceiveProps (props) {
+    this.parseStateObject(props)
+  }
+
+  parseStateObject (props) {
     var arr = []
     for (let control in props.appData) {
       arr.push({
@@ -35,7 +44,7 @@ class ReduxTreeView extends Component {
 
   render () {
     return (
-      <div>
+      <div className='treeview'>
         {
           this.dataSource.map((control, i) => {
             const type = control.type
@@ -43,13 +52,11 @@ class ReduxTreeView extends Component {
             return (
 
               <TreeView key={control.type + i} nodeLabel={label} defaultCollapsed={false}>
-                {control.props.map((prop, k)=> {
-                  const label2 = <span className="node">{prop.type}: {prop.value}</span>;
+                {control.props.map((prop, k) => {
+                  const label2 = <span className='node'>{prop.type}: {prop.value}</span>
                   return (
-                    <TreeView nodeLabel={label2} key={'reduxtree' + k + i} defaultCollapsed={false}>
-
-                    </TreeView>
-                  );
+                    <TreeView nodeLabel={label2} key={'reduxtree' + k + i} defaultCollapsed={false} />
+                  )
                 })}
               </TreeView>
             )
