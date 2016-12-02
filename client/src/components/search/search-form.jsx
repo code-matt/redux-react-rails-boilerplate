@@ -9,7 +9,8 @@ class SearchForm extends Component {
     this.handleSearch = this.handleSearch.bind(this)
   }
 
-  handleSearch () {
+  handleSearch (event) {
+    event.preventDefault()
     this.props.searchCB()
   }
 
