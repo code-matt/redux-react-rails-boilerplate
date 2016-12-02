@@ -1,24 +1,25 @@
-# README
+##### Prod:
+```
+rails db:create
+rails db:migrate
+rails db:seed
+cd client
+npm install
+npm run build
+rails s
+visit localhost:3000
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###### Dev:
+```
+Tab1:
+rails db:create
+rails db:migrate
+rails db:seed
+rails s
+Tab2:
+cd client
+npm install
+npm start
+visit localhost:3001
+```
