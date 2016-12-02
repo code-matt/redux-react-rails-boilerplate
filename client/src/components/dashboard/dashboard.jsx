@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
+
 import './dashboard.css'
-import FavoriteCard from '../favorites/favorite-card'
-import VisibleLoginForm from '../../redux/containers/login'
 import logo from './logo.svg'
+
+import VisibleLoginForm from '../../redux/containers/login'
+
+import FavoriteCard from '../favorites/favorite-card'
+
 import SearchForm from '../search/search-form'
 import FavoriteForm from '../addfav/addfav-form'
 

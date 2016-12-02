@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import VisibleDashboard from './redux/containers/dashboard'
 import './App.css'
 
-// toast // need to reimplement
-// import Notifications from 'react-notify-toast'
+import Notifications from 'react-notify-toast'
 
 // redux
 import { Provider } from 'react-redux'
@@ -24,6 +23,9 @@ class App extends Component {
   render () {
     return (
       <div>
+        <div className='main'>
+          <Notifications />
+        </div>
         <Provider store={store}>
           <VisibleDashboard />
         </Provider>
