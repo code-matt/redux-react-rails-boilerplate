@@ -6,9 +6,21 @@
 .subtitle {
   font-style: italic;
   font-size: 0.7em;
-  transform: translateY(-20px);
+  transform: translateY(-10px);
 }
 
 .highlight {
   color: #51D9FF;
+}
+
+.results {
+  display: inline-block;
+}
+
+.demo-list-control {
+max-width: 700px
+}
+
+.demo-list-radio {
+  display: inline;
 }
