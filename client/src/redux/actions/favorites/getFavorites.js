@@ -17,9 +17,9 @@ function getFavorites (query) {
     .then(response => response.json())
     .then(json =>
       setTimeout(() => {
-        notify.show('Dispatched action with the returned json results', 'success', 2000)
+        notify.show('Dispatched setFavoritesAction with the returned json results', 'success', 2000)
         dispatch(setFavoritesAction(json.favs))
-      }, 2100)
+      }, 2500)
     )
   }
 }

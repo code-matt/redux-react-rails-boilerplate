@@ -1,4 +1,5 @@
 import { newFetch } from '../lib/newFetch'
+import {notify} from 'react-notify-toast'
 
 export const loginActionSuccess = (jwt) => ({
   type: 'LOGIN_SUCCESS',
@@ -20,9 +21,16 @@ function login (email, pass) {
     })
     .then(response => response.json())
     .then(json => {
-      dispatch(loginActionSuccess(json.jwt))
+      setTimeout(() => {
+        notify.show('Dispatching loginActionSuccess with the jwt returned by rails', 'success', 2000)
+        dispatch(loginActionSuccess(json.jwt))
+      }, 2500)
     }).catch(error => {
       dispatch(loginActionFail())
+      setTimeout(() => {
+        notify.show('Dispatching, loginActionFail. Use qq@qq.com/12345678', 'error', 2000)
+        dispatch(loginActionFail())
+      }, 2500)
     })
   }
 }

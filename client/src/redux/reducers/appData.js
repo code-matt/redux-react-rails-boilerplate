@@ -3,15 +3,18 @@ const appData = (state, action) => {
     state = {
       login: {
         usernameInput: '',
-        passwordInput: ''
+        passwordInput: '',
+        loading: false
       },
       search: {
-        searchInput: ''
+        searchInput: '',
+        loading: false
       },
       add: {
         nameInput: '',
         urlInput: '',
-        description: ''
+        description: '',
+        loading: false
       }
     }
   }
