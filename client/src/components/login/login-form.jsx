@@ -2,6 +2,24 @@ import React, { Component } from 'react'
 import './login-form.css'
 
 class LoginForm extends Component {
+
+  constructor () {
+    super()
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleValueChange = this.handleValueChange.bind(this)
+  }
+  
+  handleValueChange (event) {
+    this.props._appActions.changeData(event.target.value, event.target.id, 'login')
+  }
+
+  handleSubmit (event) {
+    this.props._authActions.login(
+      this.props.appData.login.usernameInput,
+      this.props.appData.login.passwordInput
+    )
+    event.preventDefault()
+  }
   render () {
     return (
       <div className='loginbox' id='tt1'>
@@ -13,16 +31,16 @@ class LoginForm extends Component {
         <strong>Login to add favs.</strong>
         <form action='#'>
           <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
-            <input className='mdl-textfield__input' type='text' id='sample3' />
-            <label className='mdl-textfield__label' htmlFor='sample3'>Email</label>
+            <input onChange={this.handleValueChange} className='mdl-textfield__input' type='text' id='usernameInput' />
+            <label className='mdl-textfield__label' htmlFor='usernameInput'>Email</label>
           </div>
           <br />
           <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
-            <input className='mdl-textfield__input' type='text' id='sample3' />
-            <label className='mdl-textfield__label' htmlFor='sample3'>Password</label>
+            <input onChange={this.handleValueChange} className='mdl-textfield__input' type='text' id='passwordInput' />
+            <label className='mdl-textfield__label' htmlFor='passwordInput'>Password</label>
           </div>
         </form>
-        <button className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>
+        <button onClick={this.handleSubmit} className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>
           Login
         </button>
       </div>

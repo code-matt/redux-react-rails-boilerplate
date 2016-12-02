@@ -4,11 +4,17 @@ import FavoriteCard from '../favorites/favorite-card'
 import VisibleLoginForm from '../../redux/containers/login'
 import logo from './logo.svg'
 import SearchForm from '../search/search-form'
+import FavoriteForm from '../addfav/addfav-form'
 
 class Dashboard extends Component {
 
   handleValueChange (value, fieldId, propName) {
     this.props._appActions.changeData(value, fieldId, propName)
+  }
+
+  handleLogout (event) {
+    event.preventDefault()
+    this.props._authActions.logout()
   }
 
   handleSearch () {
@@ -46,7 +52,13 @@ class Dashboard extends Component {
             </div>
           </div>
           <div className='row'>
-            <VisibleLoginForm />
+            {this.props.token
+              ? <div>
+                <button onClick={this.handleLogout.bind(this)} className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>Logout</button>
+                <FavoriteForm />
+              </div>
+              : <VisibleLoginForm />
+            }
           </div>
           <br />
           <div className='row'>

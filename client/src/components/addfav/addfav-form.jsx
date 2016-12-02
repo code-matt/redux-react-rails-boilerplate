@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './favorite-card.css'
 
 class FavoriteForm extends Component {
   render () {

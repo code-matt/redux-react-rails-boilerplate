@@ -1,30 +1,22 @@
+import { newFetch } from '../lib/newFetch'
+
 export const loginActionSuccess = (jwt) => ({
   type: 'LOGIN_SUCCESS',
-  token: jwt,
+  token: jwt
 })
 
 export const loginActionFail = () => ({
   type: 'LOGIN_FAIL',
-  token: null,
-  error: [{
-    div: 'non-specific',
-    message: 'Username and or password do not match'
-  }]
+  token: null
 })
 
 function login (email, pass) {
   return function (dispatch) {
-    return fetch('http://localhost:3000/api/v1/knock/auth_token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        auth: {
-          email: email,
-          password: pass
-        }
-      })
+    return newFetch('POST', false, '/api/v1/knock/auth_token', {
+      auth: {
+        email: email,
+        password: pass
+      }
     })
     .then(response => response.json())
     .then(json => {
