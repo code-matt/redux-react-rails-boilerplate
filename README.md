@@ -12,6 +12,18 @@
 
 ![Screenshot](screenshot.png)
 
+### Caviats
+* Router - This is not set up to work with the react-router. If you think
+your design needs it, think again. If you still think it needs it,
+see this gist (coming soon) on a hack you can do to have Rails
+and React router play together.
+
+* OAuth - Knock goes not support multiple authentication  strategies out
+of the box. Luckily, there has been discussion and attempts at this by
+users of the gem. Have a look at https://github.com/nsarno/knock/issues/11
+if you are interested in this. Please open a PR here if you do get it working
+smoothly!
+
 ### Installation:
 
 ##### Prod:
@@ -40,3 +52,10 @@ npm install
 npm start
 visit localhost:3001
 ```
+
+### Contribute!
+* Fork it
+* Create your feature branch (git checkout -b my-new-feature)
+* Commit your changes (git commit -am 'Add some feature')
+* Push to the branch (git push origin my-new-feature)
+* Create a new Pull Request
