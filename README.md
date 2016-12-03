@@ -11,6 +11,12 @@
 * FontAwesome
 * ReactToastr Notifications
 
+The master branch is semi-educational. Have no experience with this stack?
+Follow the simple demo code. There are notifications and mouseovers
+trying to explain what is going on as far as Redux containers and Redux
+actions go. The clean_version branch should be used for starting Projects.
+
+
 ![Screenshot](screenshot.png)
 
 ### Caviats
@@ -31,6 +37,9 @@ if you are interested in this. Please open a PR here if you do get it working
 smoothly!
 
 ### Installation:
+
+Do a search and replace on the entire project for 'ReduxReactRails' in
+order to change the psql database and project name. 
 
 ##### Prod:
 Change your production host to localhost also for now in /client/.env before you build.
