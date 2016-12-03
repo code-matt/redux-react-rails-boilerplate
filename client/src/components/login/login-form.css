@@ -8,12 +8,14 @@
   border: 1px solid #42797C;
   display: inline-block;
   padding: 5px;
+  max-width: 300px
 }
 
 .mdl-textfield__input {
   background-color: #333232 !important;
   background-clip: content-box !important;
   color: #51D9FF !important;
+  width: 95% !important;
 }
 
 .mdl-textfield__input:hover {
