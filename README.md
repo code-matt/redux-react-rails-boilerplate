@@ -2,6 +2,7 @@
 ## https://redux-react-rails-boilerplate.herokuapp.com/
 
 * Redux
+* ReduxThunk for ansync actions
 * React
 * Rails 
 * Material Design Lite
