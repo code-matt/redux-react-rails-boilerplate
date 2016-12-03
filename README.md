@@ -14,13 +14,13 @@
 The master branch is semi-educational. Have no experience with this stack?
 Follow the simple demo code. There are notifications and mouseovers
 trying to explain what is going on as far as Redux containers and Redux
-actions go. The clean_version branch should be used for starting Projects.
+actions go. The clean_version branch should be used for starting projects.
 
 
 ![Screenshot](screenshot.png)
 
 ### Caviats
-* Ruby/Rails/Bundler Setup - Its beyong the scope of this readme to 
+* Ruby/Rails/Bundler Setup - It's beyond the scope of this readme to 
 help you with this, it can be something of a long process given your setup.
 If you are on Windows, God help you. Here are some usefull links:
 https://github.com/rbenv/rbenv https://github.com/bundler/bundler
