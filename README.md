@@ -54,8 +54,8 @@ visit localhost:3001
 ```
 
 ### Contribute!
-* Fork it
-* Create your feature branch (git checkout -b my-new-feature)
-* Commit your changes (git commit -am 'Add some feature')
-* Push to the branch (git push origin my-new-feature)
+* Clone it
+* Create your feature branch
+* Commit your changes
+* Push to the branch
 * Create a new Pull Request
