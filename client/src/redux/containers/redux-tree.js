@@ -3,7 +3,9 @@ import ReduxTreeView from '../../components/redux-tree/redux-tree'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    appData: state.appData
+    appData: state.appData,
+    token: state.token,
+    favorites: state.favorites
   }
 }
 
