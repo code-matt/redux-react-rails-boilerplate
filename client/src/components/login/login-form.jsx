@@ -31,7 +31,7 @@ class LoginForm extends Component {
           You can find me in redux/containers/login.js.
         </div>
         <strong>Login to add favs.</strong>
-        <form action='#'>
+        <form>
           <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label field'>
             <Textfield
               key={'usernameInput'}

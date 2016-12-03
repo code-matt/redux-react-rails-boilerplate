@@ -9,7 +9,7 @@ class ReduxTreeView extends Component {
     this.componentWillMount = this.componentWillMount.bind(this)
   }
 
-  componentWillMount (props) {
+  componentWillMount () {
     this.dataSource = Object.assign(
       {},
       {

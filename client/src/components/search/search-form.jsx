@@ -30,7 +30,7 @@ class SearchForm extends Component {
           the Dashboard to! Find me in /components/search/search-form.jsx
         </div>
         <strong>Search Favorite Things</strong>
-        <form action='#'>
+        <form>
           <div className='label mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
             <Textfield
               key={'searchInput'}
