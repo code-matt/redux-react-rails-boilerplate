@@ -13,13 +13,13 @@ class ReduxTreeView extends Component {
     this.dataSource = Object.assign(
       {},
       {
-        favorites: this.props.favorites
-      },
-      {
         token: this.props.token
       },
       {
         appData: this.props.appData
+      },
+      {
+        favorites: this.props.favorites
       }
     )
   }
@@ -28,13 +28,13 @@ class ReduxTreeView extends Component {
     this.dataSource = Object.assign(
       {},
       {
-        favorites: props.favorites
-      },
-      {
         token: props.token
       },
       {
         appData: props.appData
+      },
+      {
+        favorites: props.favorites
       }
     )
   }
