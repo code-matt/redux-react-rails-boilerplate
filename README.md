@@ -2,9 +2,9 @@
 ## https://redux-react-rails-boilerplate.herokuapp.com/
 
 * Redux
-* ReduxThunk for ansync actions
+* ReduxThunk for async actions
 * React
-* Rails 
+* Rails5
 * Material Design Lite
 * Bootstrap
 * FontAwesome
@@ -15,7 +15,7 @@
 ### Caviats
 * Ruby/Rails/Bundler Setup - Its beyong the scope of this readme to 
 help you with this, it can be something of a long process given your setup.
-If you are on Windows, god help you. Here are some usefull links:
+If you are on Windows, God help you. Here are some usefull links:
 https://github.com/rbenv/rbenv https://github.com/bundler/bundler
 
 * Router - This is not set up to work with the react-router. If you think
