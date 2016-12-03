@@ -14,7 +14,9 @@
 The master branch is semi-educational. Have no experience with this stack?
 Follow the simple demo code. There are notifications and mouseovers
 trying to explain what is going on as far as Redux containers and Redux
-actions go. The clean_version branch should be used for starting projects.
+actions go. The clean_version branch should be used for starting projects. I
+intentionally left out displaying form validations being returned from
+the backend because there is enough going on already for simple boilerplate.
 
 
 ![Screenshot](screenshot.png)
