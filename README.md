@@ -18,7 +18,7 @@ your design needs it, think again. If you still think it needs it,
 see this gist (coming soon) on a hack you can do to have Rails
 and React router play together.
 
-* OAuth - Knock goes not support multiple authentication  strategies out
+* OAuth - Knock does not support multiple authentication  strategies out
 of the box. Luckily, there has been discussion and attempts at this by
 users of the gem. Have a look at https://github.com/nsarno/knock/issues/11
 if you are interested in this. Please open a PR here if you do get it working
