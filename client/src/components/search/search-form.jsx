@@ -31,7 +31,7 @@ class SearchForm extends Component {
         </div>
         <strong>Search Favorite Things</strong>
         <form action='#'>
-          <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+          <div className='label mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
             <Textfield
               key={'searchInput'}
               id='searchInput'
@@ -39,7 +39,7 @@ class SearchForm extends Component {
               onChange={this.handleValueChange}
               label=''
             />
-            <label className='mdl-textfield__label' htmlFor='searchInput'>Query</label>
+            <label className='mdl-textfield__label label' htmlFor='searchInput'>Query</label>
           </div>
           <br />
         </form>

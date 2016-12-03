@@ -4,8 +4,25 @@
 }
 
 .loginbox {
-  color: #F19725;
-  border: 1px solid #51D9FF;
+  color: #51D9FF;
+  border: 1px solid #42797C;
   display: inline-block;
-  padding: 16px;
+  padding: 5px;
+}
+
+.mdl-textfield__input {
+  background-color: #333232 !important;
+  background-clip: content-box !important;
+  color: #51D9FF !important;
+}
+
+.mdl-textfield__input:hover {
+  background-color: #223334 !important;
+  background-clip: content-box !important;
+}
+
+.mdl-textfield__label {
+  transform: translateY(4px) !important;
+  /*padding: 20px !important;*/
+  color: #42797C !important;
 }

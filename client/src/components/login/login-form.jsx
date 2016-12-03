@@ -32,7 +32,7 @@ class LoginForm extends Component {
         </div>
         <strong>Login to add favs.</strong>
         <form action='#'>
-          <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+          <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label field'>
             <Textfield
               key={'usernameInput'}
               id='usernameInput'
@@ -43,7 +43,7 @@ class LoginForm extends Component {
             <label className='mdl-textfield__label' htmlFor='usernameInput'>Email</label>
           </div>
           <br />
-          <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+          <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label field'>
             <Textfield
               key={'passwordInput'}
               id='passwordInput'
@@ -54,7 +54,7 @@ class LoginForm extends Component {
             <label className='mdl-textfield__label' htmlFor='passwordInput'>Password</label>
           </div>
         </form>
-        <Button onClick={this.handleSubmit} className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>
+        <Button onClick={this.handleSubmit} className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent loginbtn'>
           Login
         </Button>
       </div>
