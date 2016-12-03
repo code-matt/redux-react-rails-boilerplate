@@ -58,7 +58,7 @@ class Dashboard extends Component {
                   </div>
                   <h6>Welcome to Redux + React + Rails boilerplate</h6>
                   <div className='subtitle'><span className='highlight'>React</span> provided via create-react-app package <i className='fa fa-heart highlight fa-1x' aria-hidden='true' /></div>
-                  <div className='subtitle'>Make sure to fech the <span className='highlight'><a href='https://github.com/code-matt/redux-react-rails-boilerplate/tree/clean_version' target='_blank'>clean version</a></span> if you are going to use it!</div>
+                  <div className='subtitle'>Make sure to fetch the <span className='highlight'><a href='https://github.com/code-matt/redux-react-rails-boilerplate/tree/clean_version' target='_blank'>clean version</a></span> if you are going to use it!</div>
                 </div>
               </div>
               <div className='row'>
