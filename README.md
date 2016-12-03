@@ -1,4 +1,17 @@
-https://redux-react-rails-boilerplate.herokuapp.com/
+# Redux-React-Rails-Boilerplate
+## https://redux-react-rails-boilerplate.herokuapp.com/
+
+* Redux
+* React
+* Rails 
+* Material Design Lite
+* Bootstrap
+* FontAwesome
+* ReactToastr Notifications
+
+![Screenshot](screenshot.png)
+
+### Installation:
 
 ##### Prod:
 Change your production host to localhost also for now in /client/.env before you build.
