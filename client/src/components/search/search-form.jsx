@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './search-form.css'
+import Textfield from 'react-mdl/lib/Textfield'
+import Button from 'react-mdl/lib/Button'
 
 class SearchForm extends Component {
 
@@ -30,14 +32,20 @@ class SearchForm extends Component {
         <strong>Search Favorite Things</strong>
         <form action='#'>
           <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
-            <input onChange={this.handleValueChange} id='searchInput' className='mdl-textfield__input' type='text' />
+            <Textfield
+              key={'searchInput'}
+              id='searchInput'
+              defaultValue='GitHub'
+              onChange={this.handleValueChange}
+              label=''
+            />
             <label className='mdl-textfield__label' htmlFor='searchInput'>Query</label>
           </div>
           <br />
         </form>
-        <button onClick={this.handleSearch}className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>
+        <Button onClick={this.handleSearch}className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>
           Search!
-        </button>
+        </Button>
       </div>
     )
   }

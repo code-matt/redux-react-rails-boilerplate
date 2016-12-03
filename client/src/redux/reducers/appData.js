@@ -7,7 +7,7 @@ const appData = (state, action) => {
         loading: false
       },
       search: {
-        searchInput: '',
+        searchInput: 'GitHub',
         loading: false
       },
       add: {
