@@ -13,6 +13,11 @@
 ![Screenshot](screenshot.png)
 
 ### Caviats
+* Ruby/Rails/Bundler Setup - Its beyong the scope of this readme to 
+help you with this, it can be something of a long process given your setup.
+If you are on Windows, god help you. Here are some usefull links:
+https://github.com/rbenv/rbenv https://github.com/bundler/bundler
+
 * Router - This is not set up to work with the react-router. If you think
 your design needs it, think again. If you still think it needs it,
 see this gist (coming soon) on a hack you can do to have Rails
@@ -29,6 +34,7 @@ smoothly!
 ##### Prod:
 Change your production host to localhost also for now in /client/.env before you build.
 ```
+bundle install
 rails db:create
 rails db:migrate
 rails db:seed
@@ -42,6 +48,7 @@ visit localhost:3000
 ###### Dev:
 ```
 Tab1:
+bundle install
 rails db:create
 rails db:migrate
 rails db:seed
