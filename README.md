@@ -29,8 +29,7 @@ If you are on Windows, God help you. Here are some usefull links:
 https://github.com/rbenv/rbenv https://github.com/bundler/bundler
 
 * Router - This is not set up to work with the react-router. If you think
-your design needs it, think again. If you still think it needs it,
-see this gist (coming soon) on a hack you can do to have Rails
+your design needs it, see this gist (coming soon) on a hack you can do to have Rails
 and React router play together.
 
 * OAuth - Knock does not support multiple authentication  strategies out
