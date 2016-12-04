@@ -71,7 +71,8 @@ class Dashboard extends Component {
               <div className='row'>
                 <SearchForm
                   valueChangeCB={this.handleValueChange.bind(this)}
-                  searchCB={this.handleSearch.bind(this)} />
+                  searchCB={this.handleSearch.bind(this)}
+                  appData={this.props.appData} />
               </div>
               {this.props.favorites.length > 0
                 ? <div className='row'>

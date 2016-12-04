@@ -4,7 +4,7 @@ import './favorite-card.css'
 class FavoriteCard extends Component {
   render () {
     return (
-      <div>
+      <div key={'favcard' + this.props.favorite.id}>
         <li className='mdl-list__item'>
           <span className='resultbox mdl-list__item-primary-content'>
             <div className='img-fluid'>

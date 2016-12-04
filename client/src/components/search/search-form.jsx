@@ -3,6 +3,7 @@ import './search-form.css'
 import Textfield from 'react-mdl/lib/Textfield'
 import Button from 'react-mdl/lib/Button'
 import Tooltip from 'react-mdl/lib/Tooltip'
+import Spinner from 'react-mdl/lib/Spinner'
 
 class SearchForm extends Component {
 
@@ -19,6 +20,20 @@ class SearchForm extends Component {
 
   handleValueChange (event) {
     this.props.valueChangeCB(event.target.value, event.target.id, 'search')
+  }
+
+  isLoading () {
+    if (this.props.appData.search.loading) {
+      return (
+        <Spinner />
+      )
+    } else {
+      return (
+        <Button onClick={this.handleSearch} className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>
+          Search!
+        </Button>
+      )
+    }
   }
 
   render () {
@@ -38,9 +53,9 @@ class SearchForm extends Component {
               <label className='mdl-textfield__label label' htmlFor='searchInput'>Query</label>
             </div>
             <br />
-            <Button onClick={this.handleSearch}className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>
-            Search!
-            </Button>
+            {
+              this.isLoading()
+            }
           </form>
         </Tooltip>
       </div>
