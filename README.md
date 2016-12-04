@@ -10,6 +10,7 @@
 * Bootstrap
 * FontAwesome
 * ReactToastr Notifications
+Demo app(master) size compressed and minified: 580kb, 3 code requests.
 
 The master branch is semi-educational. Have no experience with this stack?
 Follow the simple demo code. There are notifications and mouseovers

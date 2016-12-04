@@ -3,6 +3,7 @@ import './login-form.css'
 import Textfield from 'react-mdl/lib/Textfield'
 import Button from 'react-mdl/lib/Button'
 import Tooltip from 'react-mdl/lib/Tooltip'
+import Spinner from 'react-mdl/lib/Spinner'
 
 class LoginForm extends Component {
 
@@ -22,6 +23,20 @@ class LoginForm extends Component {
       this.props.appData.login.passwordInput
     )
     event.preventDefault()
+  }
+
+  isLoading () {
+    if (this.props.appData.login.loading) {
+      return (
+        <Spinner />
+      )
+    } else {
+      return (
+        <Button onClick={this.handleSubmit} className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent loginbtn'>
+          Login
+        </Button>
+      )
+    }
   }
   render () {
     return (
@@ -50,9 +65,9 @@ class LoginForm extends Component {
               />
               <label className='mdl-textfield__label' htmlFor='passwordInput'>Password</label>
             </div>
-            <Button onClick={this.handleSubmit} className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent loginbtn'>
-              Login
-            </Button>
+            {
+              this.isLoading()
+            }
           </form>
         </Tooltip>
       </div>
