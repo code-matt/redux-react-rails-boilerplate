@@ -1,14 +1,21 @@
 import React, { Component } from 'react'
+
+// redux container components
 import VisibleDashboard from './redux/containers/dashboard'
 import VisibleAbout from './redux/containers/about'
 import VisibleHeader from './redux/containers/header'
 import VisibleReduxTree from './redux/containers/redux-tree'
 import VisibleAddFavorite from './redux/containers/addfav'
-import {NotFound} from './components/not-found/notfound'
-import './App.css'
-import {notify} from 'react-notify-toast'
 
-import Notifications from 'react-notify-toast'
+// regular react components
+import {NotFound} from './components/not-found/notfound'
+
+
+//css
+import './App.css'
+
+// notifications
+import Notifications, {notify} from 'react-notify-toast'
 
 // redux
 import { Provider } from 'react-redux'
@@ -23,6 +30,11 @@ const store = createStore(ReduxReactRails, applyMiddleware(thunk))
 
 class App extends Component {
 
+  constructor () {
+    super()
+    this.railsRedirect = this.railsRedirect.bind(this)
+  }
+
   componentWillReceiveProps (nextProps) {
     this.setState({
       children: nextProps.children
@@ -33,9 +45,20 @@ class App extends Component {
     if (!localStorage.token) {
       replace({
         pathname: '/',
+        state: { 
+          nextPathname: nextState.location.pathname,
+          authError: true }
+      })
+    }
+  }
+
+  railsRedirect (nextState, replace) {
+    var location = window.location
+    if (location.search.split('=')[0] === '?goto') {
+      replace({
+        pathname: '/' + location.search.split('=')[1],
         state: { nextPathname: nextState.location.pathname }
       })
-      notify.show('You must be logged in to access that page!', 'error', 2000)
     }
   }
 
@@ -53,13 +76,13 @@ class App extends Component {
               </div>
               <Provider store={store}>
                 <Router history={browserHistory}>
-                  <Route path='/' component={VisibleDashboard} />
-                  <Route path='/about' component={VisibleAbout} />
-                  <Route path='/addfav' component={VisibleAddFavorite} onEnter={this.requireAuth.bind(this)} />
-                  <Route path='*' component={NotFound} />
+                  <Route path='/' component={VisibleDashboard} onEnter={composeEnters(this.railsRedirect)} />
+                  <Route path='/about' component={VisibleAbout} onEnter={composeEnters(this.railsRedirect)} />
+                  <Route path='/addfav' component={VisibleAddFavorite} onEnter={composeEnters(this.railsRedirect, this.requireAuth)} />
+                  <Route path='*' component={NotFound} onEnter={composeEnters(this.railsRedirect)} />
                 </Router>
               </Provider>
-            </div>  
+            </div>
             <div className='col-md-4'>
               <VisibleReduxTree store={store} />
             </div>
@@ -71,4 +94,21 @@ class App extends Component {
 }
 
 export default App
+
+function composeEnters (...hooks) {
+  return function onEnter (nextState, replace, executeTransition) {
+    (function executeHooksSynchronously (remainingHooks) {
+      if (!remainingHooks.length) return executeTransition()
+      let nextHook = remainingHooks[0]
+      if (nextHook.length >= 3) {
+        nextHook.call(this, nextState, replace, () => {
+          executeHooksSynchronously(remainingHooks.slice(1))
+        })
+      } else {
+        nextHook.call(this, nextState, replace)
+        executeHooksSynchronously(remainingHooks.slice(1))
+      }
+    })(hooks)
+  }
+}
 
