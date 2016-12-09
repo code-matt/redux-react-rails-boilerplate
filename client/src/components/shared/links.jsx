@@ -7,7 +7,7 @@ import './links.css'
 class Links extends Component {
   render () {
     return (
-      <div>
+      <div className='links'>
         <Link to='/'>
           <Button className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent navlink'>
             Dashboard
