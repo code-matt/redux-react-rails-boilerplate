@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import VisibleDashboard from './redux/containers/dashboard'
+import VisibleAbout from './redux/containers/about'
 import VisibleHeader from './redux/containers/header'
 import VisibleReduxTree from './redux/containers/redux-tree'
+import VisibleAddFavorite from './redux/containers/addfav'
 import './App.css'
+import {notify} from 'react-notify-toast'
 
 import Notifications from 'react-notify-toast'
 
@@ -31,6 +34,7 @@ class App extends Component {
         pathname: '/',
         state: { nextPathname: nextState.location.pathname }
       })
+      notify.show('You must be logged in to access that page!', 'error', 2000)
     }
   }
 
@@ -49,6 +53,8 @@ class App extends Component {
               <Provider store={store}>
                 <Router history={browserHistory}>
                   <Route path='/' component={VisibleDashboard} />
+                  <Route path='/about' component={VisibleAbout} />
+                  <Route path='/addfav' component={VisibleAddFavorite} onEnter={this.requireAuth.bind(this)} />
                   <Route path='*' component={VisibleDashboard} />
                 </Router>
               </Provider>

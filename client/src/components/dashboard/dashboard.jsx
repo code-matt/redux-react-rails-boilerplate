@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-
+import {Link} from 'react-router'
 import './dashboard.css'
 import Tooltip from 'react-mdl/lib/Tooltip'
+import Links from '../shared/links'
 
 import VisibleLoginForm from '../../redux/containers/login'
 import FavoriteCard from './search/favorites/favorite-card'
@@ -42,6 +43,7 @@ class Dashboard extends Component {
         <div className='App App-header'>
           <div className='row'>
             <div className='col-md-7'>
+              <Links />
               <div className='row'>
                 {this.props.token
                   ? <div>

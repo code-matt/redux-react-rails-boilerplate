@@ -1,4 +1,5 @@
 import {notify} from 'react-notify-toast'
+import { browserHistory } from 'react-router'
 
 export const logoutActionSuccess = () => ({
   type: 'LOGOUT_SUCCESS'
@@ -6,6 +7,7 @@ export const logoutActionSuccess = () => ({
 
 function logout () {
   return function (dispatch) {
+    browserHistory.push('/')
     notify.show('Dispatched logoutActionSuccess', 'success', 2000)
     dispatch(logoutActionSuccess())
   }
