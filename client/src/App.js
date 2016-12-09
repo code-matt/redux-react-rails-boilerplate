@@ -45,9 +45,10 @@ class App extends Component {
     if (!localStorage.token) {
       replace({
         pathname: '/',
-        state: { nextPathname: nextState.location.pathname }
+        state: { 
+          nextPathname: nextState.location.pathname,
+          authError: true }
       })
-      notify.show('You must be logged in to access that page!', 'error', 2000)
     }
   }
 

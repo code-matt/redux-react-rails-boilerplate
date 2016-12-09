@@ -6,8 +6,19 @@ import VisibleLoginForm from '../../redux/containers/login'
 import FavoriteCard from './search/favorites/favorite-card'
 import SearchForm from './search/search-form'
 
+import {notify} from 'react-notify-toast'
+
 
 class Dashboard extends Component {
+
+  componentDidUpdate () {
+    var routerLocationState = this.props.location.state
+    if (routerLocationState) {
+      if (routerLocationState.authError) {
+        notify.show('You must be logged in to access that page!', 'error', 2000)
+      }
+    }
+  }
 
   handleValueChange (value, fieldId, propName) {
     this.props._appActions.changeData(value, fieldId, propName)
