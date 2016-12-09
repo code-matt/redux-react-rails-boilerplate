@@ -75,6 +75,3 @@ visit localhost:3001
 * Commit your changes
 * Push to the branch
 * Create a new Pull Request
-* Commit your changes
-* Push to the branch
-* Create a new Pull Request
