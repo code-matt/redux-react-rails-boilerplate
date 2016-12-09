@@ -4,6 +4,7 @@ import VisibleAbout from './redux/containers/about'
 import VisibleHeader from './redux/containers/header'
 import VisibleReduxTree from './redux/containers/redux-tree'
 import VisibleAddFavorite from './redux/containers/addfav'
+import {NotFound} from './components/not-found/notfound'
 import './App.css'
 import {notify} from 'react-notify-toast'
 
@@ -55,7 +56,7 @@ class App extends Component {
                   <Route path='/' component={VisibleDashboard} />
                   <Route path='/about' component={VisibleAbout} />
                   <Route path='/addfav' component={VisibleAddFavorite} onEnter={this.requireAuth.bind(this)} />
-                  <Route path='*' component={VisibleDashboard} />
+                  <Route path='*' component={NotFound} />
                 </Router>
               </Provider>
             </div>  

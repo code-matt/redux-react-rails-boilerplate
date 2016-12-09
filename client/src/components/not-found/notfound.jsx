@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './about.css'
 import Links from '../shared/links'
 
 class NotFound extends Component {
