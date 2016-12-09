@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import LoginForm from '../../components/login/login-form'
+import LoginForm from '../../components/dashboard/login/login-form'
 import { login } from '../actions/auth'
 import { changeData } from '../actions/app/changeData'
 
