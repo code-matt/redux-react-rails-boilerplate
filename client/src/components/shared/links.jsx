@@ -23,6 +23,11 @@ class Links extends Component {
             AddFav
           </Button>
         </Link>
+        <div>
+          <Button onClick={() => this.props._authActions.logout()} className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent navlink'>
+            Logout
+          </Button>
+        </div>
       </div>
     )
   }

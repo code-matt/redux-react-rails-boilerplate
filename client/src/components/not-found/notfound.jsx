@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Links from '../shared/links'
+import VisibleLinks from '../../redux/containers/links'
 
 class NotFound extends Component {
   render () {
     return (
       <div>
-        <Links />
+        <VisibleLinks />
         <h3 className='highlight'>Page not found :(></h3>
       </div>
     )

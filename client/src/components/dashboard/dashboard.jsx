@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router'
 import './dashboard.css'
-import Tooltip from 'react-mdl/lib/Tooltip'
-import Links from '../shared/links'
 
+import VisibleLinks from '../../redux/containers/links'
 import VisibleLoginForm from '../../redux/containers/login'
 import FavoriteCard from './search/favorites/favorite-card'
 import SearchForm from './search/search-form'
 
-import VisibleReduxTree from '../../redux/containers/redux-tree'
 
 class Dashboard extends Component {
 
@@ -43,12 +40,10 @@ class Dashboard extends Component {
         <div className='App App-header'>
           <div className='row'>
             <div className='col-md-7'>
-              <Links />
+              <VisibleLinks />
               <div className='row'>
                 {this.props.token
-                  ? <div>
-                    <button onClick={this.handleLogout.bind(this)} className='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>Logout</button>
-                  </div>
+                  ? <div>You are now logged in.</div>
                   : <VisibleLoginForm />
                 }
               </div>
