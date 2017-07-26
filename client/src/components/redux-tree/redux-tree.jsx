@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './react-treeview.css'
 
 class ReduxTreeView extends Component {
   constructor () {

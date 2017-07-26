@@ -8,7 +8,12 @@
   border: 1px solid #42797C;
   display: inline-block;
   padding: 5px;
-  max-width: 300px
+  max-width: 300px;
+  margin-bottom: 10px;
+  .submit {
+    text-align: center;
+    margin-bottom: 10px;
+  }
 }
 
 .mdl-textfield__input {
@@ -25,6 +30,5 @@
 
 .mdl-textfield__label {
   transform: translateY(4px) !important;
-  /*padding: 20px !important;*/
   color: #42797C !important;
 }

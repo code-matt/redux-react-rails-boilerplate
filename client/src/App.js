@@ -10,12 +10,8 @@ import VisibleAddFavorite from './redux/containers/addfav'
 // regular react components
 import {NotFound} from './components/not-found/notfound'
 
-
-//css
-import './App.css'
-
 // notifications
-import Notifications, {notify} from 'react-notify-toast'
+import Notifications from 'react-notify-toast'
 
 // redux
 import { Provider } from 'react-redux'
@@ -25,6 +21,8 @@ import ReduxReactRails from './redux/reducers'
 
 // router
 import { Router, Route, browserHistory } from 'react-router'
+
+import './scss/main.scss'
 
 const store = createStore(ReduxReactRails, applyMiddleware(thunk))
 
@@ -45,7 +43,7 @@ class App extends Component {
     if (!localStorage.token) {
       replace({
         pathname: '/',
-        state: { 
+        state: {
           nextPathname: nextState.location.pathname,
           authError: true }
       })
@@ -68,24 +66,20 @@ class App extends Component {
         <div className='main'>
           <Notifications />
         </div>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-md-7 content'>
-              <div>
-                <VisibleHeader store={store} />
-              </div>
-              <Provider store={store}>
-                <Router history={browserHistory}>
-                  <Route path='/' component={VisibleDashboard} onEnter={composeEnters(this.railsRedirect)} />
-                  <Route path='/about' component={VisibleAbout} onEnter={composeEnters(this.railsRedirect)} />
-                  <Route path='/addfav' component={VisibleAddFavorite} onEnter={composeEnters(this.railsRedirect, this.requireAuth)} />
-                  <Route path='*' component={NotFound} onEnter={composeEnters(this.railsRedirect)} />
-                </Router>
-              </Provider>
-            </div>
-            <div className='col-md-4'>
-              <VisibleReduxTree store={store} />
-            </div>
+        <div className='main-content-container'>
+          <div className='left-content'>
+            <VisibleHeader history={browserHistory} store={store} />
+            <Provider store={store}>
+              <Router history={browserHistory}>
+                <Route path='/' component={VisibleDashboard} onEnter={composeEnters(this.railsRedirect)} />
+                <Route path='/about' component={VisibleAbout} onEnter={composeEnters(this.railsRedirect)} />
+                <Route path='/addfav' component={VisibleAddFavorite} onEnter={composeEnters(this.railsRedirect, this.requireAuth)} />
+                <Route path='*' component={NotFound} onEnter={composeEnters(this.railsRedirect)} />
+              </Router>
+            </Provider>
+          </div>
+          <div className='right-content'>
+            <VisibleReduxTree store={store} />
           </div>
         </div>
       </div>

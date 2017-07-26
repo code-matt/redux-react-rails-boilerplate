@@ -1,0 +1,17 @@
+h1 {
+  color: #fff;
+}
+
+.main-content-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 60px;
+  .left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .right-content {
+
+  }
+}

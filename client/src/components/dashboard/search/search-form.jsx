@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './search-form.css'
 import Textfield from 'react-mdl/lib/Textfield'
 import Button from 'react-mdl/lib/Button'
 import Tooltip from 'react-mdl/lib/Tooltip'
@@ -42,7 +41,7 @@ class SearchForm extends Component {
         <strong>Search Favorite Things</strong>
         <Tooltip position='left' label='I am a regular component named SearchForm. Dashboardis my owner and I receive props provided by Redux through it. I cannot dispatch actions but I can tell the Dashboard to! Find me in /components/search/search-form.jsx'>
           <form>
-            <div className='label mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+            <div className=''>
               <Textfield
                 key={'searchInput'}
                 id='searchInput'
@@ -50,12 +49,13 @@ class SearchForm extends Component {
                 onChange={this.handleValueChange}
                 label=''
               />
-              <label className='mdl-textfield__label label' htmlFor='searchInput'>Query</label>
             </div>
             <br />
-            {
-              this.isLoading()
-            }
+            <div className='submit'>
+              {
+                this.isLoading()
+              }
+            </div>
           </form>
         </Tooltip>
       </div>

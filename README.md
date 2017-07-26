@@ -35,21 +35,26 @@ of facebook OAuth!
 Do a search and replace on the entire project for 'ReduxReactRails' in
 order to change the psql database and project name. 
 
-##### Prod:
-Change your production host to localhost also for now in /client/.env before you build.
 ```
 bundle install
 rails db:create
 rails db:migrate
 rails db:seed
+```
+
+##### Prod:
+Change your production host to localhost also for now in /client/.env before you build.
+
+```
 cd client
 npm install
 npm run build
-rails s
-visit localhost:3000
+rails s -p 3001
+visit localhost:3001
 ```
 
 ###### Dev:
+
 ```
 Tab1:
 bundle install
@@ -61,7 +66,7 @@ Tab2:
 cd client
 npm install
 npm start
-visit localhost:3001
+visit localhost:3000
 ```
 
 ### Contribute!

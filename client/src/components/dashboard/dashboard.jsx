@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-import './dashboard.css'
 
-import VisibleLinks from '../../redux/containers/links'
 import VisibleLoginForm from '../../redux/containers/login'
 import FavoriteCard from './search/favorites/favorite-card'
 import SearchForm from './search/search-form'
 
 import {notify} from 'react-notify-toast'
-
 
 class Dashboard extends Component {
 
@@ -47,37 +44,24 @@ class Dashboard extends Component {
 
   render () {
     return (
-      <div className='container'>
-        <div className='App App-header'>
-          <div className='row'>
-            <div className='col-md-7'>
-              <VisibleLinks />
-              <div className='row'>
-                {this.props.token
-                  ? <div>You are now logged in.</div>
-                  : <VisibleLoginForm />
-                }
-              </div>
-              <br />
-              <div className='row'>
-                <SearchForm
-                  valueChangeCB={this.handleValueChange.bind(this)}
-                  searchCB={this.handleSearch.bind(this)}
-                  appData={this.props.appData} />
-              </div>
-              {this.props.favorites.length > 0
-                ? <div className='row'>
-                  <div className='results'>
-                    <ul className='demo-list-control mdl-list'>
-                      { this.renderFavorites(this.props.favorites) }
-                    </ul>
-                  </div>
-                </div>
-                : <div className='searchErr'><strong>No search results found, try again...</strong></div>
-              }
-            </div>
+      <div className='dashboard'>
+        {this.props.token
+          ? <div className='loggedin-msg'>You are logged in.</div>
+          : <VisibleLoginForm />
+        }
+        <br />
+        <SearchForm
+          valueChangeCB={this.handleValueChange.bind(this)}
+          searchCB={this.handleSearch.bind(this)}
+          appData={this.props.appData} />
+        {this.props.favorites.length > 0
+          ? <div className='favorites'>
+            <ul className='favorites-list'>
+              { this.renderFavorites(this.props.favorites) }
+            </ul>
           </div>
-        </div>
+          : <div className='noresults'>No search results found, try again...</div>
+        }
       </div>
     )
   }

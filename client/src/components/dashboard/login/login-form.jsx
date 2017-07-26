@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './login-form.css'
 import Textfield from 'react-mdl/lib/Textfield'
 import Button from 'react-mdl/lib/Button'
 import Tooltip from 'react-mdl/lib/Tooltip'
@@ -65,9 +64,11 @@ class LoginForm extends Component {
               />
               <label className='mdl-textfield__label' htmlFor='passwordInput'>Password</label>
             </div>
-            {
-              this.isLoading()
-            }
+            <div className='submit'>
+              {
+                this.isLoading()
+              }
+            </div>
           </form>
         </Tooltip>
       </div>
