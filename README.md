@@ -1,14 +1,11 @@
 # Redux-React-Rails-Boilerplate
-## https://redux-react-rails-boilerplate.herokuapp.com/ 
 ( free heroku dyno, give it some time to spin up)
 
 * Redux
-* ReduxThunk for async actions
 * React
-* React Router
 * Rails5
+* scss
 * Material Design Lite
-* Bootstrap
 * FontAwesome
 * ReactToastr Notifications
 
@@ -40,6 +37,8 @@ bundle install
 rails db:create
 rails db:migrate
 rails db:seed
+cd client
+npm install
 ```
 
 ##### Prod:
@@ -47,24 +46,19 @@ Change your production host to localhost also for now in /client/.env before you
 
 ```
 cd client
-npm install
 npm run build
-rails s -p 3001
-visit localhost:3001
+cd ..
+rails s
+visit localhost:3000
 ```
 
 ###### Dev:
 
 ```
 Tab1:
-bundle install
-rails db:create
-rails db:migrate
-rails db:seed
-rails s
+rails s -p 3001
 Tab2:
 cd client
-npm install
 npm start
 visit localhost:3000
 ```
