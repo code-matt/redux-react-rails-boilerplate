@@ -27,15 +27,6 @@ module ReduxReactRails
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     config.active_record.logger = nil
-    # config.active_job.queue_adapter = :sucker_punch
-    paths['public'] = File.join 'client', 'build'
-    config.autoload_paths += Dir[Rails.root.join('app')]
   end
 end
 
-Rails.application.config.middleware.insert_after(
-  ActionDispatch::Static,
-  ActionDispatch::Static,
-  Rails.root.join("public").to_s,
-  Rails.application.config.static_cache_control
-)
