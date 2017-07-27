@@ -56,6 +56,7 @@ class LoginForm extends Component {
             <br />
             <div className='mdl-textfield mdl-js-textfield mdl-textfield--floating-label field'>
               <Textfield
+                type='password'
                 key={'passwordInput'}
                 id='passwordInput'
                 defaultValue='12345678'
