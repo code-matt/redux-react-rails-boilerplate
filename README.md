@@ -1,4 +1,5 @@
 # Redux-React-Rails-Boilerplate
+## https://redux-react-rails-boilerplate.herokuapp.com/
 ( free heroku dyno, give it some time to spin up)
 
 * Redux
